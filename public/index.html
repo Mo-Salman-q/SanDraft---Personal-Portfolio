@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SanDraft - Personal Portfolio</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <!-- FontAwesome for valid icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Sidebar fixed -->
+        <aside class="left-sidebar">
+            <div class="profile-card">
+                <div class="profile-image">
+                    <img src="/public/images/my-photo.png" alt="Mohamed Salman">
+                </div>
+                <h2>Mohamed Salman</h2>
+                <div class="tag"><i class="fas fa-fire"></i></div>
+                <p>A Software Engineer who has developed countless innovative solutions.</p>
+                <div class="socials">
+                    <a href="https://wa.me/+918838899652"><i class="fab fa-whatsapp"></i></a>
+                    <a href="www.linkedin.com/in/mhd-salman-37a410295"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/s.a.l.mann/"><i class="fab fa-instagram"></i></a>
+                    <a href="tel:+918838899652"><i class="fas fa-phone"></i></a>
+                </div>
+                <button class="video-tutorial"><i class="fab fa-youtube"></i> View CV </button>
+            </div>
+        </aside>
+
+        <!-- Right Content scrollable -->
+        <main class="right-content">
+            <!-- Top Navigation Fixed at Bottom (Hidden initially) -->
+            <nav class="top-nav">
+                <a href="#home" class="active"><i class="fas fa-home"></i></a>
+                <a href="#projects"><i class="far fa-folder"></i></a>
+                <a href="#github"><i class="fab fa-github"></i></a>
+                <a href="#experience"><i class="fas fa-briefcase"></i></a>
+                <a href="#tools"><i class="fas fa-wrench"></i></a>
+                <a href="#achievements"><i class="fas fa-trophy"></i></a>
+                <a href="#contact"><i class="far fa-envelope"></i></a>
+            </nav>
+
+            <!-- Home Section -->
+            <section id="home">
+                <h1 class="hero-title">COMPUTER SCIENCE<br><span class="hero-subtitle">ENGINEER</span></h1>
+                <p class="hero-desc">Passionate about creating intuitive and engaging user experiences. Specialize in
+                    transforming ideas into beautifully crafted products.</p>
+
+                <div class="stats">
+                    <div class="stat">
+                        <h2>+2</h2>
+                        <p>YEARS OF EXPERIENCE <br> AS FREELANCER</p>
+                    </div>
+                    <div class="stat">
+                        <h2>+23</h2>
+                        <p>PROJECTS COMPLETED</p>
+                    </div>
+                    <div class="stat">
+                        <h2>+6</h2>
+                        <p>ENGAGED CLIENTS</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects">
+                <h2 class="section-title">RECENT <br> <span class="section-subtitle">PROJECTS</span></h2>
+                <div class="project-grid" style="grid-template-columns: 1fr; gap: 30px;">
+                    <!-- Project 1 -->
+                    <a href="https://secret-outfit-pallapatti-backend.onrender.com/" class="project-card"
+                        style="text-decoration:none; color:inherit; background:#1c1c1c; padding: 20px; flex-direction:row; align-items:center; justify-content:space-between; min-height: 140px; border-radius: 20px;">
+                        <div style="display:flex; align-items:center; gap: 30px;">
+                            <div
+                                style="width: 120px; height: 120px; background: #333; border-radius: 12px; overflow:hidden;">
+                                <img src="/public/images/project/project1.png"
+                                    style="width:100%; height:100%; object-fit:cover;" alt="Project 1">
+                            </div>
+                            <div>
+                                <h3 style="color:white; font-size:26px; margin-bottom: 8px;">Secret Outfit</h3>
+                                <p style="color:#888; font-size:16px; font-weight:normal;">E-Commerce Website for a
+                                    Clothing Shop</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-arrow-up-right-from-square"
+                            style="color: var(--primary-orange); font-size: 20px; align-self: flex-start; margin: 10px;"></i>
+                    </a>
+
+                    <!-- Project 2 -->
+                    <a href="https://theroyalagencypalani-sketch.github.io/Product-website/" class="project-card"
+                        style="text-decoration:none; color:inherit; background:#1c1c1c; padding: 20px; flex-direction:row; align-items:center; justify-content:space-between; min-height: 140px; border-radius: 20px;">
+                        <div style="display:flex; align-items:center; gap: 30px;">
+                            <div
+                                style="width: 120px; height: 120px; background: #333; border-radius: 12px; overflow:hidden;">
+                                <img src="/public/images/project/project2.png"
+                                    style="width:100%; height:100%; object-fit:cover;" alt="Project 2">
+                            </div>
+                            <div>
+                                <h3 style="color:white; font-size:26px; margin-bottom: 8px;">The Royal Agency</h3>
+                                <p style="color:#888; font-size:16px; font-weight:normal;">The Hardware and UPVC
+                                    Fittings Manufacturing Startup</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-arrow-up-right-from-square"
+                            style="color: var(--primary-orange); font-size: 20px; align-self: flex-start; margin: 10px;"></i>
+                    </a>
+
+
+                </div>
+            </section>
+
+            <!-- Github Projects Section -->
+            <section id="github">
+                <h2 class="section-title">GITHUB <br> <span class="section-subtitle">PROJECTS</span></h2>
+                <div class="project-grid" style="grid-template-columns: 1fr; gap: 30px;">
+                    <!-- Github Project 1 -->
+                    <a href="https://github.com/Mo-Salman-q/SafeNest" class="project-card"
+                        style="text-decoration:none; color:inherit; background:#1c1c1c; padding: 20px; flex-direction:row; align-items:center; justify-content:space-between; min-height: 140px; border-radius: 20px;">
+                        <div style="display:flex; align-items:center; gap: 30px;">
+                            <div
+                                style="width: 120px; height: 120px; background: #333; border-radius: 12px; display:flex; align-items:center; justify-content:center;">
+                                <i class="fab fa-github" style="font-size: 50px; color:#555; margin:0;"></i>
+                            </div>
+                            <div>
+                                <h3 style="color:white; font-size:26px; margin-bottom: 8px;">SAFENEST</h3>
+                                <p style="color:#888; font-size:16px; font-weight:normal;">A Platform that helps womens
+                                    to enhance their security.</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-arrow-up-right-from-square"
+                            style="color: var(--primary-orange); font-size: 20px; align-self: flex-start; margin: 10px;"></i>
+                    </a>
+
+                    <!-- Github Project 2 -->
+                    <a href="https://github.com/Mo-Salman-q/Civilinkin" class="project-card"
+                        style="text-decoration:none; color:inherit; background:#1c1c1c; padding: 20px; flex-direction:row; align-items:center; justify-content:space-between; min-height: 140px; border-radius: 20px;">
+                        <div style="display:flex; align-items:center; gap: 30px;">
+                            <div
+                                style="width: 120px; height: 120px; background: #333; border-radius: 12px; display:flex; align-items:center; justify-content:center;">
+                                <i class="fab fa-github" style="font-size: 50px; color:#555; margin:0;"></i>
+                            </div>
+                            <div>
+                                <h3 style="color:white; font-size:26px; margin-bottom: 8px;">CiviLinkin</h3>
+                                <p style="color:#888; font-size:16px; font-weight:normal;">A real-time platform for
+                                    civic issues reporting medium that connects govt departments .</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-arrow-up-right-from-square"
+                            style="color: var(--primary-orange); font-size: 20px; align-self: flex-start; margin: 10px;"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience">
+                <h2 class="section-title">3 YEARS OF <br> <span class="section-subtitle">EXPERIENCE</span></h2>
+                <div class="project-grid" style="grid-template-columns: 1fr; gap: 20px;">
+                    <div class="project-card"
+                        style="background:#222; min-height:150px; justify-content:flex-start; padding: 30px;">
+                        <h3 style="color:white;">SNS College of Engineering</h3>
+                        <p style="color:#aaa; font-size:16px; margin-top:10px; font-weight:normal;">Pursuing B.E. in
+                            Computer Science and Engineering.</p>
+                        <p style="color:#666; font-size:14px; margin-top:15px; font-weight:normal;">2023 - 2027
+                        </p>
+                        <div class="arrow" style="border:none; color:var(--primary-orange);"><i
+                                class="fas fa-arrow-right"></i></div>
+                    </div>
+
+                    <div class="project-card"
+                        style="background:#222; min-height:150px; justify-content:flex-start; padding: 30px;">
+                        <h3 style="color:white;">Lehora Technology Private Limited</h3>
+                        <p style="color:#aaa; font-size:16px; margin-top:10px; font-weight:normal;">Software Engineering
+                            Intern contributing to real-world applications and gaining hands-on industry experience.</p>
+                        <p style="color:#666; font-size:14px; margin-top:15px; font-weight:normal;">3 Months
+                        </p>
+                        <div class="arrow" style="border:none; color:var(--primary-orange);"><i
+                                class="fas fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tools Section -->
+            <section id="tools">
+                <h2 class="section-title">TOOLS <br> <span class="section-subtitle">KNOWN</span></h2>
+                <div class="project-grid">
+                    <div class="project-card"
+                        style="background:#222; min-height:80px; padding: 20px; flex-direction:row; justify-content:flex-start; align-items:center; gap: 20px;">
+                        <i class="fab fa-figma" style="margin:0; color:#fff;"></i>
+                        <div>
+                            <h3 style="color:white; font-size:18px;">Figma</h3>
+                            <p style="color:#aaa; font-size:14px; font-weight:normal;">Design Tool</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card"
+                        style="background:#222; min-height:80px; padding: 20px; flex-direction:row; justify-content:flex-start; align-items:center; gap: 20px;">
+                        <i class="fab fa-react" style="margin:0; color:#61DBFB;"></i>
+                        <div>
+                            <h3 style="color:white; font-size:18px;">React js</h3>
+                            <p style="color:#aaa; font-size:14px; font-weight:normal;">Frontend Library</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card"
+                        style="background:#222; min-height:80px; padding: 20px; flex-direction:row; justify-content:flex-start; align-items:center; gap: 20px;">
+                        <i class="fab fa-node-js" style="margin:0; color:#68A063;"></i>
+                        <div>
+                            <h3 style="color:white; font-size:18px;">Node/Express js</h3>
+                            <p style="color:#aaa; font-size:14px; font-weight:normal;">Backend Environment</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card"
+                        style="background:#222; min-height:80px; padding: 20px; flex-direction:row; justify-content:flex-start; align-items:center; gap: 20px;">
+                        <i class="fas fa-database" style="margin:0; color:#4DB33D;"></i>
+                        <div>
+                            <h3 style="color:white; font-size:18px;">Mongo db</h3>
+                            <p style="color:#aaa; font-size:14px; font-weight:normal;">NoSQL Database</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card"
+                        style="background:#222; min-height:80px; padding: 20px; flex-direction:row; justify-content:flex-start; align-items:center; gap: 20px;">
+                        <i class="fab fa-java" style="margin:0; color:#f89820;"></i>
+                        <div>
+                            <h3 style="color:white; font-size:18px;">Java</h3>
+                            <p style="color:#aaa; font-size:14px; font-weight:normal;">Object-Oriented Language</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card"
+                        style="background:#222; min-height:80px; padding: 20px; flex-direction:row; justify-content:flex-start; align-items:center; gap: 20px;">
+                        <i class="fas fa-code" style="margin:0; color:#e34f26;"></i>
+                        <div>
+                            <h3 style="color:white; font-size:18px;">HTML, CSS, JS</h3>
+                            <p style="color:#aaa; font-size:14px; font-weight:normal;">Web Fundamentals</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements Section -->
+            <section id="achievements">
+                <h2 class="section-title">ACHIEVEMENTS</h2>
+                <div class="project-grid" style="grid-template-columns: 1fr;">
+                    <div class="project-card"
+                        style="background:#222; min-height:150px; justify-content:flex-start; padding: 30px;">
+                        <h3 style="color:white;">Best UX/UI Design Award</h3>
+                        <p style="color:#aaa; font-size:16px; margin-top:10px; font-weight:normal;">Awarded for
+                            exceptional user interface and experience design.</p>
+                        <p style="color:#666; font-size:14px; margin-top:15px; font-weight:normal;">Apr 8, 2022 &emsp;
+                            <span style="float:right;">6min read</span>
+                        </p>
+                        <div class="arrow" style="border:none; color:var(--primary-orange);"><i
+                                class="fas fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2 class="section-title">LET'S WORK <br> <span class="section-subtitle">TOGETHER</span></h2>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="Your@email.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Budget</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select...</option>
+                            <option value="low">Under $5k</option>
+                            <option value="medium">$5k - $15k</option>
+                            <option value="high">Over $15k</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required rows="5" placeholder="Message"></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn" class="submit-btn">Submit</button>
+                    <div id="form-status"
+                        style="display: none; margin-top: 15px; padding: 15px; border-radius: 10px; font-weight: 600; text-align: center;">
+                    </div>
+                </form>
+            </section>
+
+            <!-- Profiles Section -->
+            <section id="profiles">
+                <h2 class="section-title">MY <br> <span class="section-subtitle">PROFILES</span></h2>
+                <div class="project-grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 20px;">
+                    <!-- LeetCode -->
+                    <a href="#" class="project-card"
+                        style="text-decoration:none; background:#222; min-height:80px; padding: 20px; flex-direction:column; justify-content:center; align-items:center; gap: 15px; text-align:center;">
+                        <i class="fas fa-code" style="margin:0; color:var(--primary-orange); font-size:30px;"></i>
+                        <h3 style="color:white; font-size:16px;">LeetCode</h3>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/Mo-Salman-q" target="_blank" class="project-card"
+                        style="text-decoration:none; background:#222; min-height:80px; padding: 20px; flex-direction:column; justify-content:center; align-items:center; gap: 15px; text-align:center;">
+                        <i class="fab fa-github" style="margin:0; color:#fff; font-size:30px;"></i>
+                        <h3 style="color:white; font-size:16px;">GitHub</h3>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/mhd-salman-37a410295" target="_blank" class="project-card"
+                        style="text-decoration:none; background:#222; min-height:80px; padding: 20px; flex-direction:column; justify-content:center; align-items:center; gap: 15px; text-align:center;">
+                        <i class="fab fa-linkedin" style="margin:0; color:#0A66C2; font-size:30px;"></i>
+                        <h3 style="color:white; font-size:16px;">LinkedIn</h3>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/s.a.l.mann/" target="_blank" class="project-card"
+                        style="text-decoration:none; background:#222; min-height:80px; padding: 20px; flex-direction:column; justify-content:center; align-items:center; gap: 15px; text-align:center;">
+                        <i class="fab fa-instagram" style="margin:0; color:#E1306C; font-size:30px;"></i>
+                        <h3 style="color:white; font-size:16px;">Instagram</h3>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/+918838899652" target="_blank" class="project-card"
+                        style="text-decoration:none; background:#222; min-height:80px; padding: 20px; flex-direction:column; justify-content:center; align-items:center; gap: 15px; text-align:center;">
+                        <i class="fab fa-whatsapp" style="margin:0; color:#25D366; font-size:30px;"></i>
+                        <h3 style="color:white; font-size:16px;">WhatsApp</h3>
+                    </a>
+
+                    <!-- Phone -->
+                    <a href="tel:+918838899652" class="project-card"
+                        style="text-decoration:none; background:#222; min-height:80px; padding: 20px; flex-direction:column; justify-content:center; align-items:center; gap: 15px; text-align:center;">
+                        <i class="fas fa-phone" style="margin:0; color:var(--primary-orange); font-size:30px;"></i>
+                        <h3 style="color:white; font-size:16px;">Phone</h3>
+                    </a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Script to highlight active nav link on scroll -->
+    <script>
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.top-nav a');
+        const topNav = document.querySelector('.top-nav');
+
+        window.addEventListener('scroll', () => {
+            // Hide navbar based on scroll position
+            if (window.scrollY > 150) {
+                topNav.classList.add('hidden');
+            } else {
+                topNav.classList.remove('hidden');
+            }
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById("contact-form");
+        const submitBtn = document.getElementById("submit-btn");
+        const formStatus = document.getElementById("form-status");
+
+        if (contactForm) {
+            contactForm.addEventListener("submit", async (e) => {
+                e.preventDefault();
+
+                submitBtn.textContent = "Sending...";
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = "0.7";
+                formStatus.style.display = "none";
+
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
+
+                try {
+                    const response = await fetch("/contact", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(data)
+                    });
+
+                    const result = await response.json();
+
+                    formStatus.style.display = "block";
+                    formStatus.textContent = result.message;
+
+                    if (result.success) {
+                        formStatus.style.backgroundColor = "rgba(40, 167, 69, 0.2)";
+                        formStatus.style.color = "#28a745";
+                        contactForm.reset();
+                    } else {
+                        formStatus.style.backgroundColor = "rgba(220, 53, 69, 0.2)";
+                        formStatus.style.color = "#dc3545";
+                    }
+                } catch (error) {
+                    formStatus.style.display = "block";
+                    formStatus.style.backgroundColor = "rgba(220, 53, 69, 0.2)";
+                    formStatus.style.color = "#dc3545";
+                    formStatus.textContent = "An error occurred connecting to the server.";
+                } finally {
+                    submitBtn.textContent = "Submit";
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = "1";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
