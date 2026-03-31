@@ -63,6 +63,6 @@ ${message}
 
   } catch (error) {
     console.error("ERROR:", error);
-    return res.status(500).json({ success: false, error: error.message });
+    return res.status(500).json({ success: false, message: `Detailed Server Error: ${error.message}` });
   }
 }
