@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.post("/contact", async (req, res) => {
+app.post("/api/contact", async (req, res) => {
     const { name, email, budget, message } = req.body;
 
     if (!name || !email || !message) {

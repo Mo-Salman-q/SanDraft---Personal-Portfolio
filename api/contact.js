@@ -45,7 +45,7 @@ ${message}
       text: `Hi ${name}, I received your message!`,
     });
 
-    return res.status(200).json({ success: true });
+    return res.status(200).json({ success: true, message: "Your message was successfully sent!" });
 
   } catch (error) {
     console.error("ERROR:", error);
