@@ -483,4 +483,33 @@ section {
         flex-direction: column;
         gap: 20px;
     }
+
+    /* Tools & Profiles 3 in a row */
+    #tools .project-grid,
+    #profiles .project-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    #tools .project-card,
+    #profiles .project-card {
+        padding: 15px 5px !important;
+        min-height: 100px !important;
+        justify-content: center !important;
+    }
+
+    #tools .project-card i,
+    #profiles .project-card i {
+        font-size: 28px !important;
+        margin-bottom: 8px !important;
+    }
+
+    #tools .project-card h3,
+    #profiles .project-card h3 {
+        font-size: 12px !important;
+    }
+
+    #tools .project-card p {
+        display: none !important; /* Hide description on mobile to save space */
+    }
 }
