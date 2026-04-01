@@ -11,6 +11,10 @@
 </head>
 
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
     <div class="container">
         <!-- Left Sidebar fixed -->
         <aside class="left-sidebar slide-in-left">
@@ -35,13 +39,18 @@
         <main class="right-content">
             <!-- Top Navigation Fixed at Bottom (Hidden initially) -->
             <nav class="top-nav">
-                <a href="#home" class="active"><i class="fas fa-home"></i></a>
-                <a href="#projects"><i class="far fa-folder"></i></a>
-                <a href="#github"><i class="fab fa-github"></i></a>
-                <a href="#experience"><i class="fas fa-briefcase"></i></a>
-                <a href="#tools"><i class="fas fa-wrench"></i></a>
-                <a href="#achievements"><i class="fas fa-trophy"></i></a>
-                <a href="#contact"><i class="far fa-envelope"></i></a>
+                <div class="nav-links">
+                    <a href="#home" class="active"><i class="fas fa-home"></i></a>
+                    <a href="#projects"><i class="far fa-folder"></i></a>
+                    <a href="#github"><i class="fab fa-github"></i></a>
+                    <a href="#experience"><i class="fas fa-briefcase"></i></a>
+                    <a href="#tools"><i class="fas fa-wrench"></i></a>
+                    <a href="#achievements"><i class="fas fa-trophy"></i></a>
+                    <a href="#contact"><i class="far fa-envelope"></i></a>
+                </div>
+                <button class="hamburger-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </nav>
 
             <!-- Home Section -->
@@ -388,15 +397,22 @@
     <!-- Script to highlight active nav link on scroll -->
     <script>
         const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.top-nav a');
+        const navLinks = document.querySelectorAll('.nav-links a');
         const topNav = document.querySelector('.top-nav');
+        const hamburgerBtn = document.querySelector('.hamburger-btn');
+
+        hamburgerBtn.addEventListener('click', () => {
+            topNav.classList.toggle('expanded');
+        });
 
         window.addEventListener('scroll', () => {
-            // Hide navbar based on scroll position
+            // Collapse navbar into hamburger based on scroll position
             if (window.scrollY > 150) {
-                topNav.classList.add('hidden');
+                topNav.classList.add('collapsed');
+                topNav.classList.remove('expanded'); // Auto retract on scroll
             } else {
-                topNav.classList.remove('hidden');
+                topNav.classList.remove('collapsed');
+                topNav.classList.remove('expanded');
             }
 
             let current = '';
@@ -496,6 +512,44 @@
                 vibeCta.style.setProperty('--y', `${y}px`);
             });
         }
+
+        // Custom Cursor Logic
+        const cursorDot = document.querySelector('[data-cursor-dot]');
+        const cursorOutline = document.querySelector('[data-cursor-outline]');
+
+        window.addEventListener('mousemove', function(e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            // Simple animation loop for outline
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        // Add hover effect for interactable elements
+        const interactables = document.querySelectorAll('a, button, input, textarea, select');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorDot.classList.add('hovered');
+                cursorOutline.classList.add('hovered');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorDot.classList.remove('hovered');
+                cursorOutline.classList.remove('hovered');
+            });
+            
+            // Allow clicking inputs even with the cursor over them
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+               el.style.cursor = 'text';
+            } else {
+               el.style.cursor = 'none';
+            }
+        });
     </script>
 </body>
 

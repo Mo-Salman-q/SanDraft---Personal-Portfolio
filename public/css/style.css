@@ -15,6 +15,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Outfit', sans-serif;
+    cursor: none;
 }
 
 html {
@@ -63,6 +64,7 @@ body {
     0% {
         box-shadow: 0 0 15px rgba(255, 87, 34, 0.5), 0 0 30px rgba(255, 87, 34, 0.3), 0 20px 40px rgba(0, 0, 0, 0.5);
     }
+
     100% {
         box-shadow: 0 0 25px rgba(255, 87, 34, 0.9), 0 0 50px rgba(255, 87, 34, 0.6), 0 0 70px rgba(255, 87, 34, 0.4), 0 20px 40px rgba(0, 0, 0, 0.5);
     }
@@ -106,6 +108,7 @@ body {
         box-shadow: 0 0 10px var(--primary-orange), 0 0 20px var(--primary-orange);
         border: 2px solid transparent;
     }
+
     100% {
         box-shadow: 0 0 20px var(--primary-orange), 0 0 40px var(--primary-orange);
         border: 2px solid var(--primary-orange);
@@ -203,34 +206,84 @@ body {
     transform: translateX(-50%);
     background: #2a2a2a;
     display: flex;
-    gap: 30px;
     justify-content: center;
     align-items: center;
     padding: 15px 30px;
     border-radius: 20px;
     z-index: 1000;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1);
+    overflow: hidden;
 }
 
-.top-nav.hidden {
-    opacity: 0;
-    visibility: hidden;
-    transform: translate(-50%, -20px) scale(0.95);
-    pointer-events: none;
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    transition: all 0.3s ease;
+    width: auto;
+    opacity: 1;
 }
 
-
-.top-nav a {
+.nav-links a {
     color: #888;
     font-size: 20px;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.top-nav a:hover,
-.top-nav a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: white;
+}
+
+.hamburger-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    display: none;
+    cursor: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+}
+
+.top-nav.collapsed {
+    padding: 12px 20px;
+    border-radius: 30px;
+    transform: translateX(-50%) translateY(-20px);
+    gap: 0;
+}
+
+.top-nav.collapsed .nav-links {
+    width: 0;
+    opacity: 0;
+    gap: 0;
+    pointer-events: none;
+}
+
+.top-nav.collapsed .hamburger-btn {
+    display: block;
+}
+
+.top-nav.collapsed.expanded {
+    padding: 15px 30px;
+    border-radius: 20px;
+    gap: 20px;
+}
+
+.top-nav.collapsed.expanded .nav-links {
+    width: 100%;
+    max-width: fit-content;
+    opacity: 1;
+    gap: 25px;
+    pointer-events: auto;
+}
+
+.top-nav.collapsed.expanded .hamburger-btn {
+    display: block;
+    transform: rotate(90deg);
+    color: var(--primary-orange);
 }
 
 /* Sections */
@@ -437,7 +490,8 @@ section {
         max-width: 400px;
         position: relative;
         top: 0;
-        margin-top: 80px; /* Space for the top nav */
+        margin-top: 80px;
+        /* Space for the top nav */
     }
 
     .right-content {
@@ -451,13 +505,27 @@ section {
         top: 20px;
         width: 90%;
         max-width: 400px;
-        justify-content: space-around;
         padding: 15px;
+    }
+
+    .nav-links {
+        justify-content: space-around;
+        width: 100%;
         gap: 10px;
     }
-    
-    .top-nav a {
+
+    .nav-links a {
         font-size: 18px;
+    }
+
+    .top-nav.collapsed.expanded {
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    .top-nav.collapsed.expanded .nav-links {
+        gap: 15px;
+        justify-content: center;
     }
 
     .hero-title {
@@ -499,8 +567,8 @@ section {
     }
 
     /* Shrink the image/icon wrapper inside project cards (Projects & Github) */
-    #projects .project-card > div > div:first-child,
-    #github .project-card > div > div:first-child {
+    #projects .project-card>div>div:first-child,
+    #github .project-card>div>div:first-child {
         width: 70px !important;
         height: 70px !important;
         min-width: 70px !important;
@@ -511,7 +579,7 @@ section {
     }
 
     /* Shrink the inner gap */
-    .project-card > div {
+    .project-card>div {
         gap: 15px !important;
     }
 
@@ -567,7 +635,8 @@ section {
     }
 
     #tools .project-card p {
-        display: none !important; /* Hide description on mobile to save space */
+        display: none !important;
+        /* Hide description on mobile to save space */
     }
 }
 
@@ -594,10 +663,21 @@ section {
     transform: translateX(0);
 }
 
-.delay-100 { transition-delay: 100ms; }
-.delay-200 { transition-delay: 200ms; }
-.delay-300 { transition-delay: 300ms; }
-.delay-400 { transition-delay: 400ms; }
+.delay-100 {
+    transition-delay: 100ms;
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+.delay-300 {
+    transition-delay: 300ms;
+}
+
+.delay-400 {
+    transition-delay: 400ms;
+}
 
 /* Premium CTA Section */
 .premium-cta {
@@ -645,7 +725,8 @@ section {
 .orb-1 {
     width: 300px;
     height: 300px;
-    background: rgba(138, 43, 226, 0.4); /* Deep Purple */
+    background: rgba(138, 43, 226, 0.4);
+    /* Deep Purple */
     top: -50px;
     left: -50px;
 }
@@ -653,15 +734,21 @@ section {
 .orb-2 {
     width: 250px;
     height: 250px;
-    background: rgba(255, 105, 180, 0.25); /* Soft Pink */
+    background: rgba(255, 105, 180, 0.25);
+    /* Soft Pink */
     bottom: -50px;
     right: -50px;
     animation-delay: -5s;
 }
 
 @keyframes floatOrb {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(50px, 50px) scale(1.2); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(50px, 50px) scale(1.2);
+    }
 }
 
 /* CTA Content positioning above base/orbs */
@@ -716,10 +803,57 @@ section {
     z-index: 10;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
     box-shadow: 0 15px 30px rgba(221, 36, 118, 0.4);
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .vibe-btn:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 25px 40px rgba(221, 36, 118, 0.6), 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Custom Cursor Styles */
+.cursor-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary-orange);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    box-shadow: 0 0 10px var(--primary-orange);
+    transition: transform 0.2s ease-out;
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(255, 87, 34, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9998;
+    pointer-events: none;
+    /* Removed width and height transition to not interupt the .animate() JS loop too much, just outline background transition */
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+/* Add width transition to only normal hover */
+.cursor-outline {
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.cursor-dot.hovered {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.cursor-outline.hovered {
+    border-color: var(--primary-orange);
+    background-color: rgba(255, 87, 34, 0.15);
+    /* In javascript the sizing animate loop is overriding css width, so we can't just use css width here.
+       Wait, let's keep animate purely on left/top! */
 }
